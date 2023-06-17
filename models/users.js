@@ -3,7 +3,7 @@
 // Eden Blau 208571927
 import mongoose from "mongoose";
 
-const userSchema = {
+const userSchema = mongoose.Schema({
     id: {
         type: Number,
         required: true,
@@ -22,6 +22,6 @@ const userSchema = {
         required: true,
         unique: true,
     }
-}
+});
 
 export default mongoose.model('Users', userSchema);
