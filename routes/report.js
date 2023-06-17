@@ -1,8 +1,8 @@
 // Moshe Dego 315044511
 // Peleg Vadbeker 209485838
 // Eden Blau 208571927
-import { Router } from "express";
-import Cost from '../models/cost.js';
+const { Router } = require("express");
+const Cost = require('../models/cost.js');
 
 const router = Router();
 
@@ -30,4 +30,4 @@ router.get('/report', async (req, res) => {
     }
 });
 
-export default router;
+module.exports = router;

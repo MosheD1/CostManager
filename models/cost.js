@@ -1,7 +1,7 @@
 // Moshe Dego 315044511
 // Peleg Vadbeker 209485838
 // Eden Blau 208571927
-import mongoose, { Types } from "mongoose";
+const mongoose = require("mongoose");
 
 const cost = new mongoose.Schema({
     user_id: {
@@ -38,4 +38,4 @@ const cost = new mongoose.Schema({
     },
 });
 
-export default mongoose.model('Cost', cost);
+module.exports = mongoose.model('Cost', cost);

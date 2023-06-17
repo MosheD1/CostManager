@@ -1,10 +1,10 @@
 // Moshe Dego 315044511
 // Peleg Vadbeker 209485838
 // Eden Blau 208571927
-import express from "express";
-import addCostRoute from './routes/addCost.js';
-import getReportRoute from './routes/report.js';
-import aboutRoute from './routes/about.js';
+const express = require("express");
+const addCostRoute = require('./routes/addCost.js');
+const getReportRoute = require('./routes/report.js');
+const aboutRoute = require('./routes/about.js');
 
 const app = express();
 app.use(express.json());

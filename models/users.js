@@ -1,7 +1,7 @@
 // Moshe Dego 315044511
 // Peleg Vadbeker 209485838
 // Eden Blau 208571927
-import mongoose from "mongoose";
+const mongoose = require("mongoose");
 
 const userSchema = mongoose.Schema({
     id: {
@@ -24,4 +24,4 @@ const userSchema = mongoose.Schema({
     }
 });
 
-export default mongoose.model('Users', userSchema);
+module.exports = mongoose.model('Users', userSchema);
