@@ -29,10 +29,6 @@ const cost = new mongoose.Schema({
         type: Number,
         required: true
     },
-    id: {
-        type: Number,
-        required: true
-    },
     description: {
         type: String,
         required: true
