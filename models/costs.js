@@ -36,4 +36,4 @@ const costs = new mongoose.Schema({
     },
 });
 
-module.exports = mongoose.model('Costs', costs);
+module.exports = mongoose.model('costs', costs);

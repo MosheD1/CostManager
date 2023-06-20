@@ -31,14 +31,13 @@ router.post('/addcost', async (req, res) => {
         return;
     }
 
-    if(!categories.contains(category)) {
+    if(!categories.includes(category)) {
         res.status(400).json('category doesn\'t exist');
         return;
     }
 
     try {
-        const user = await User.find({ user_id });
-
+        const user = await User.findOne({ id: user_id });
         if(!user) {
             res.status(400).json('user doesn\'t exists');
             return;

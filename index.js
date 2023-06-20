@@ -9,9 +9,9 @@ const aboutRoute = require('./routes/about.js');
 
 const app = express();
 // Connect to MongoDB Atlas
-mongoose.connect('mongodb+srv://mongo:Aa123456@cluster0.qaa5sqy.mongodb.net/', {
+mongoose.connect('mongodb+srv://mongo:Aa123456@cluster0.qaa5sqy.mongodb.net/costManager', {
   useNewUrlParser: true,
-  useUnifiedTopology: true,
+  useUnifiedTopology: true
 })
   .then(() => {
     console.log('Connected to MongoDB');
