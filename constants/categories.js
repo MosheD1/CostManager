@@ -1,1 +1,1 @@
-export default ["food", "health", "housing", "sport", "education", "transportation", "other"];
+module.exports = ["food", "health", "housing", "sport", "education", "transportation", "other"];
