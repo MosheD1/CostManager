@@ -7,6 +7,7 @@ const addCostRoute = require('./routes/addCost.js');
 const getReportRoute = require('./routes/report.js');
 const aboutRoute = require('./routes/about.js');
 
+//initialize app
 const app = express();
 // Connect to MongoDB Atlas
 mongoose.connect('mongodb+srv://mongo:Aa123456@cluster0.qaa5sqy.mongodb.net/costManager', {
@@ -19,13 +20,17 @@ mongoose.connect('mongodb+srv://mongo:Aa123456@cluster0.qaa5sqy.mongodb.net/cost
   .catch((error) => {
     console.error('Failed to connect to MongoDB', error);
   });
+
+//add middleware
 app.use(express.json());
 app.use(express.urlencoded({extended: false}));
 
+//add routes
 app.use(addCostRoute);
 app.use(getReportRoute);
 app.use(aboutRoute);
 
+//listen to server
 app.listen(3000, () => {
     console.log('server is up and running');
 });

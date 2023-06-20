@@ -4,6 +4,7 @@
 const mongoose = require("mongoose");
 const categories = require('../constants/categories.js');
 
+//define costs schema
 const costs = new mongoose.Schema({
     user_id: {
         type: Number,

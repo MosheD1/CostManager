@@ -3,6 +3,7 @@
 // Eden Blau 208571927
 const mongoose = require("mongoose");
 
+//define user schema
 const userSchema = mongoose.Schema({
     id: {
         type: Number,

@@ -5,6 +5,7 @@ const { Router } = require("express");
 
 const router = Router();
 
+//add about route
 router.get('/about', (req, res) => {
     const developers = [
       { firstname: 'Moshe', lastname: 'Dego', id: 315044511, email: 'moshedego@gmail.com' },

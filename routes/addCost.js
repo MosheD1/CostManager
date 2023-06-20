@@ -8,6 +8,7 @@ const categories = require('../constants/categories.js');
 
 const router = Router();
 
+//add route for add cost
 router.post('/addcost', async (req, res) => {
     const { 
         user_id, 
@@ -19,6 +20,7 @@ router.post('/addcost', async (req, res) => {
         sum 
     } = req.body;
 
+     //check for missing details
     if(!user_id || 
         !year ||
         !month || 
@@ -31,6 +33,7 @@ router.post('/addcost', async (req, res) => {
         return;
     }
 
+    //check for existing categories
     if(!categories.includes(category)) {
         res.status(400).json('category doesn\'t exist');
         return;
@@ -38,6 +41,7 @@ router.post('/addcost', async (req, res) => {
 
     try {
         const user = await User.findOne({ id: user_id });
+        //check for exisint user
         if(!user) {
             res.status(400).json('user doesn\'t exists');
             return;
@@ -53,6 +57,7 @@ router.post('/addcost', async (req, res) => {
         sum,
         });
 
+        //add new cost
         const savedCost = await cost.save()
         res.json(savedCost);
     } catch (error) {
