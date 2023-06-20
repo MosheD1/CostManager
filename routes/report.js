@@ -10,7 +10,7 @@ router.get('/report', async (req, res) => {
     const { user_id, year, month } = req.query;
   
     try {
-        const costs = Cost.find({ user_id, year, month });
+        const costs = await Cost.find({ user_id, year, month });
         const report = {
 
         };
