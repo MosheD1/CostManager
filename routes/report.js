@@ -25,11 +25,16 @@ router.get('/report', async (req, res) => {
 
         const costs = await Cost.find({ user_id, year, month });
         const report = {
-
+            food: [],
+            health:[],
+            housing:[],
+            sport:[],
+            education:[],
+            transportation:[],  
+            other:[]
         };
 
         costs.forEach((cost) => {
-            if(report[cost.category] === undefined) report[cost.category] = []
             report[cost.category].push({
               day: cost.day,
               description: cost.description,
