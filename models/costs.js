@@ -4,7 +4,7 @@
 const mongoose = require("mongoose");
 const categories = require('../constants/categories.js');
 
-const cost = new mongoose.Schema({
+const costs = new mongoose.Schema({
     user_id: {
         type: Number,
         required: true
@@ -36,4 +36,4 @@ const cost = new mongoose.Schema({
     },
 });
 
-module.exports = mongoose.model('Cost', cost);
+module.exports = mongoose.model('Costs', costs);

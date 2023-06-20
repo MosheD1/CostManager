@@ -2,7 +2,7 @@
 // Peleg Vadbeker 209485838
 // Eden Blau 208571927
 const { Router } = require("express");
-const Cost = require('../models/cost.js');
+const Cost = require('../models/costs.js');
 const User = require('../models/users.js');
 const categories = require('../constants/categories.js');
 
@@ -35,7 +35,7 @@ router.post('/addcost', async (req, res) => {
         res.status(400).json('category doesn\'t exist');
         return;
     }
-    
+
     try {
         const user = await User.find({ user_id });
 

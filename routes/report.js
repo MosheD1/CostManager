@@ -2,7 +2,7 @@
 // Peleg Vadbeker 209485838
 // Eden Blau 208571927
 const { Router } = require("express");
-const Cost = require('../models/cost.js');
+const Cost = require('../models/costs.js');
 const User = require('../models/users.js');
 
 const router = Router();
