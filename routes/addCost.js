@@ -3,6 +3,8 @@
 // Eden Blau 208571927
 const { Router } = require("express");
 const Cost = require('../models/cost.js');
+const User = require('../models/users.js');
+const categories = require('../constants/categories.js');
 
 const router = Router();
 
@@ -16,18 +18,42 @@ router.post('/addcost', async (req, res) => {
         category, 
         sum 
     } = req.body;
-  
-    const cost = new Cost({
-      user_id,
-      year,
-      month,
-      day,
-      description,
-      category,
-      sum,
-    });
-  
+
+    if(!user_id || 
+        !year ||
+        !month || 
+        !day || 
+        !description || 
+        !category || 
+        !sum
+    ) {
+        res.status(400).json('Missing details');
+        return;
+    }
+
+    if(!categories.contains(category)) {
+        res.status(400).json('category doesn\'t exist');
+        return;
+    }
+    
     try {
+        const user = await User.find({ user_id });
+
+        if(!user) {
+            res.status(400).json('user doesn\'t exists');
+            return;
+        }
+    
+        const cost = new Cost({
+        user_id,
+        year,
+        month,
+        day,
+        description,
+        category,
+        sum,
+        });
+
         const savedCost = await cost.save()
         res.json(savedCost);
     } catch (error) {
