@@ -2,15 +2,6 @@
 // Peleg Vadbeker 209485838
 // Eden Blau 208571927
 const mongoose = require("mongoose");
-const categories = {
-    food: 'Food',
-    health: 'Health',
-    housing: 'Housing',
-    sport: 'Sport',
-    education: 'Education',
-    transportation: 'Transportation',
-    other: 'Other'
-};
 
 const cost = new mongoose.Schema({
     user_id: {
@@ -36,7 +27,7 @@ const cost = new mongoose.Schema({
     category: {
         type: String,
         required: true,
-        enum: Object.values(categories)
+        enum:  ["food", "health", "housing", "sport", "education", "transportation", "other"]
     },
     sum: {
         type: Number,
